@@ -8,7 +8,7 @@ function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 
-function getUserNumber(event) {
+function getUserNumber() {
   event.preventDefault();
   const userNumber = parseInt(inputUserNumber.value);
   if (!isNaN(userNumber) && userNumber >= 1 && userNumber <= 100) {
@@ -18,15 +18,16 @@ function getUserNumber(event) {
 
 function play() {
   const movesPlayer = getUserNumber();
-  const movesComputer = getRandomNumber();
+  const movesComputer = getRandomNumber(100);
 
   if (movesPlayer > movesComputer) {
-    textTry.innerHTML = "Demasido alto";
-  } else if (movesPlayer > movesComputer) {
+    textTry.innerHTML = "Demasiado alto";
+  } else if (movesPlayer < movesComputer) {
     textTry.innerHTML = "Demasiado bajo";
-  } else {
+  } else if (movesPlayer === movesComputer) {
     textTry.innerHTML = "¡Has ganado, campeona!";
   }
+  console.log(movesComputer);
 }
 
 btnTry.addEventListener("click", play);
