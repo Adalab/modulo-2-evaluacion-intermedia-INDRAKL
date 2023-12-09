@@ -3,30 +3,37 @@
 const inputUserNumber = document.querySelector(".js_inputUserNumber");
 const btnTry = document.querySelector(".js_btnTry");
 const textTry = document.querySelector(".js_textTry");
+const attemps = document.querySelector(".js_attempts");
+
+let clicksPlayer = 0;
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
+}
+function updateScore() {
+  attemps.innerHTML = `${clicksPlayer}`;
 }
 
 function getUserNumber() {
   event.preventDefault();
   const userNumber = parseInt(inputUserNumber.value);
-  if (!isNaN(userNumber) && userNumber >= 1 && userNumber <= 100) {
-    return userNumber;
-  } else return "Introduce un número válido, por favor";
 }
 
 function play() {
   const movesPlayer = getUserNumber();
   const movesComputer = getRandomNumber(100);
+  clicksPlayer++;
 
-  if (movesPlayer > movesComputer) {
+  if (isNaN(movesPlayer) || movesPlayer < 1 || movesPlayer > 100) {
+    textTry.innerHTML = "El número debe estar entre 1 y 100";
+  } else if (movesPlayer > movesComputer) {
     textTry.innerHTML = "Demasiado alto";
   } else if (movesPlayer < movesComputer) {
     textTry.innerHTML = "Demasiado bajo";
   } else if (movesPlayer === movesComputer) {
     textTry.innerHTML = "¡Has ganado, campeona!";
   }
+  updateScore();
   console.log(movesComputer);
 }
 
