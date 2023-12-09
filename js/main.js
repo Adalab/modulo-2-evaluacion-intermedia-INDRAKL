@@ -33,9 +33,15 @@ function play() {
       textTry.innerHTML = "Demasiado bajo";
     } else if (movesPlayer === movesComputer) {
       textTry.innerHTML = "¡Has ganado, campeona!";
+      // Recargar la página después de un breve retraso (por ejemplo, 2 segundos)
+      setTimeout(function () {
+        window.location.reload();
+      }, 2000);
+      return; // Terminar la función para evitar ejecutar el resto del código
     }
   }
   updateScore();
   console.log(movesComputer);
 }
+
 btnTry.addEventListener("click", play);
