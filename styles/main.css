@@ -7,6 +7,7 @@
   background-color: yellow;
   height: 100vh;
   width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .inpuntnumber {
@@ -15,4 +16,8 @@
 }
 .texttry {
   margin-bottom: 10px;
+}
+
+.button {
+  border-radius: 5px;
 }
