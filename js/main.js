@@ -11,7 +11,7 @@ function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 function updateScore() {
-  attemps.innerHTML = `Númoero de intentos: ${clicksPlayer}`;
+  attemps.innerHTML = `Número de intentos: ${clicksPlayer}`;
 }
 
 function getUserNumber() {

@@ -3,11 +3,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-color: yellow;
   height: 100vh;
   width: 100%;
 }
 
-.inputnumber {
-  width: 50px;
+.inpuntnumber {
+  width: 150px;
+  margin-top: 10px;
+}
+.texttry {
+  margin-bottom: 10px;
 }
